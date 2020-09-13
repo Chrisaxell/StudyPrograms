@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/StudyPrograms/src" modelPluginID="StudyPrograms"
+    modelName="Ra" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ra.ecore</foreignModel>
+  <genPackages prefix="Ra" disposableProviderFactory="true" ecorePackage="ra.ecore#/">
+    <genClasses ecoreClass="ra.ecore#//Department">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Department/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//Department/programmes"/>
+    </genClasses>
+    <genClasses ecoreClass="ra.ecore#//Programme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Programme/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Programme/code"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//Programme/semesters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//Programme/spesialisations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//Programme/courseLists"/>
+      <genOperations ecoreOperation="ra.ecore#//Programme/Programme">
+        <genParameters ecoreParameter="ra.ecore#//Programme/Programme/Name"/>
+        <genParameters ecoreParameter="ra.ecore#//Programme/Programme/Code"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="ra.ecore#//Specialisation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ra.ecore#//Specialisation/semesters"/>
+    </genClasses>
+    <genClasses ecoreClass="ra.ecore#//CourseList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//CourseList/level"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//CourseList/courses"/>
+    </genClasses>
+    <genClasses ecoreClass="ra.ecore#//Semester">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Semester/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Semester/credits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//Semester/semesterCourses"/>
+    </genClasses>
+    <genClasses ecoreClass="ra.ecore#//SemesterCourseList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//SemesterCourseList/Obligatory"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ra.ecore#//SemesterCourseList/semester"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ra.ecore#//SemesterCourseList/courses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ra.ecore#//SemesterCourseList/courseLists"/>
+    </genClasses>
+    <genClasses ecoreClass="ra.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Course/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Course/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Course/credits"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
